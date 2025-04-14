@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Simulador - Plataforma de Ensino de Eletrônica</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <h1>CircuitLearn</h1>
+        <nav>
+          <ul>
+            <li><a href="index.html">Início</a></li>
+            <li><a href="teoria.html">Teoria</a></li>
+            <li><a href="exercicios.html">Exercícios</a></li>
+            <li><a href="simulador.html" class="active">Simulador</a></li>
+            <li><a href="progresso.html">Meu Progresso</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="simulador-intro">
+        <div class="container">
+          <h2>Simulador de Circuitos</h2>
+          <p>
+            Experimente circuitos virtuais e visualize o comportamento dos
+            componentes eletrônicos em tempo real.
+          </p>
+
+          <div class="simulador-opcoes">
+            <div class="opcao-card">
+              <h3>Simulador Integrado</h3>
+              <p>
+                Use nosso simulador básico integrado para circuitos simples.
+              </p>
+              <a href="#simulador-basico" class="btn primary"
+                >Abrir Simulador Básico</a
+              >
+            </div>
+
+            <div class="opcao-card">
+              <h3>Simulador Falstad</h3>
+              <p>
+                Para circuitos mais complexos, recomendamos o Falstad Circuit
+                Simulator.
+              </p>
+              <a
+                href="https://www.falstad.com/circuit/circuitjs.html"
+                target="_blank"
+                class="btn secondary"
+                >Abrir Falstad (Nova Janela)</a
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="simulador-basico" class="simulador-basico">
+        <div class="container">
+          <h2>Simulador Básico</h2>
+          <p>
+            Este simulador permite criar circuitos simples com resistores,
+            fontes de tensão e medidores.
+          </p>
+
+          <div class="simulador-workspace">
+            <div class="componentes-painel">
+              <h3>Componentes</h3>
+              <div class="componentes-lista">
+                <div class="componente" draggable="true" data-tipo="fonte">
+                  Fonte de Tensão
+                </div>
+                <div class="componente" draggable="true" data-tipo="resistor">
+                  Resistor
+                </div>
+                <div class="componente" draggable="true" data-tipo="led">
+                  LED
+                </div>
+                <div
+                  class="componente"
+                  draggable="true"
+                  data-tipo="interruptor"
+                >
+                  Interruptor
+                </div>
+                <div
+                  class="componente"
+                  draggable="true"
+                  data-tipo="amperimetro"
+                >
+                  Amperímetro
+                </div>
+                <div class="componente" draggable="true" data-tipo="voltimetro">
+                  Voltímetro
+                </div>
+              </div>
+
+              <div class="controles">
+                <button id="limpar-simulacao">Limpar Simulação</button>
+                <button id="executar-simulacao">Executar</button>
+              </div>
+            </div>
+
+            <div class="area-simulacao">
+              <div id="circuito-canvas" class="circuito-canvas">
+                <!-- Área onde o circuito será construído -->
+                <iframe
+                  width="100%"
+                  height="600"
+                  src="https://www.falstad.com/circuit/circuitjs.html"
+                  frameborder="0"
+                  allowfullscreen
+                >
+                </iframe>
+              </div>
+
+              <div class="resultados-simulacao">
+                <h3>Resultados</h3>
+                <div id="resultados-container">
+                  <p>Nenhuma simulação executada ainda.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="circuitos-predefinidos">
+            <h3>Circuitos Predefinidos</h3>
+            <div class="predefinidos-lista">
+              <button class="predefinido-btn" data-circuito="divisor-tensao">
+                Divisor de Tensão
+              </button>
+              <button class="predefinido-btn" data-circuito="led-resistor">
+                LED com Resistor
+              </button>
+              <button class="predefinido-btn" data-circuito="ponte-wheatstone">
+                Ponte de Wheatstone
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="desafios-simulacao">
+        <div class="container">
+          <h2>Desafios de Simulação</h2>
+          <p>
+            Teste seus conhecimentos com estes desafios práticos usando o
+            simulador.
+          </p>
+
+          <div class="desafios-lista">
+            <div class="desafio-card">
+              <h3>Desafio 1: Lei de Ohm</h3>
+              <p>
+                Construa um circuito com uma fonte de tensão e um resistor. Meça
+                a corrente e verifique se corresponde ao valor calculado pela
+                Lei de Ohm.
+              </p>
+              <a href="#simulador-basico" class="btn secondary"
+                >Tentar Desafio</a
+              >
+            </div>
+
+            <div class="desafio-card">
+              <h3>Desafio 2: Divisor de Tensão</h3>
+              <p>
+                Crie um divisor de tensão com dois resistores e verifique se a
+                tensão no ponto médio corresponde ao valor teórico.
+              </p>
+              <a href="#simulador-basico" class="btn secondary"
+                >Tentar Desafio</a
+              >
+            </div>
+
+            <div class="desafio-card">
+              <h3>Desafio 3: Circuito LED</h3>
+              <p>
+                Projete um circuito para acender um LED com a corrente adequada
+                usando um resistor limitador.
+              </p>
+              <a href="#simulador-basico" class="btn secondary"
+                >Tentar Desafio</a
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="container">
+        <p>&copy; 2025 CircuitLearn - Plataforma de Ensino de Eletrônica</p>
+        <p>
+          Desenvolvido para apoio educacional em engenharia e cursos técnicos
+        </p>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Exercícios - Plataforma de Ensino de Eletrônica</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <h1>CircuitLearn</h1>
+        <nav>
+          <ul>
+            <li><a href="index.html">Início</a></li>
+            <li><a href="teoria.html">Teoria</a></li>
+            <li><a href="exercicios.html" class="active">Exercícios</a></li>
+            <li><a href="simulador.html">Simulador</a></li>
+            <li><a href="progresso.html">Meu Progresso</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="exercicios-intro">
+        <div class="container">
+          <h2>Exercícios Práticos</h2>
+          <p>
+            Teste seus conhecimentos com nossos exercícios interativos.
+            Selecione um tópico e nível de dificuldade para começar.
+          </p>
+
+          <div class="exercicios-filtros">
+            <div class="filtro-grupo">
+              <label for="topico-select">Tópico:</label>
+              <select id="topico-select">
+                <option value="todos">Todos os Tópicos</option>
+                <option value="lei-ohm">Lei de Ohm</option>
+                <option value="leis-kirchhoff">Leis de Kirchhoff</option>
+                <option value="teoremas">Teoremas de Thévenin/Norton</option>
+                <option value="componentes">Componentes Básicos</option>
+                <option value="analise-ac-dc">Análise AC/DC</option>
+                <option value="filtros">Filtros</option>
+              </select>
+            </div>
+
+            <div class="filtro-grupo">
+              <label for="nivel-select">Nível:</label>
+              <select id="nivel-select">
+                <option value="todos">Todos os Níveis</option>
+                <option value="facil">Fácil</option>
+                <option value="medio">Médio</option>
+                <option value="dificil">Difícil</option>
+              </select>
+            </div>
+
+            <button id="filtrar-exercicios">Filtrar</button>
+          </div>
+        </div>
+      </section>
+
+      <section class="exercicios-lista">
+        <div class="container">
+          <div id="exercicios-container">
+            <!-- Exercícios serão carregados dinamicamente via JavaScript -->
+            <div
+              class="exercicio-card"
+              data-topico="lei-ohm"
+              data-nivel="facil"
+            >
+              <div class="exercicio-header">
+                <h3>Lei de Ohm - Exercício 1</h3>
+                <span class="nivel-badge facil">Fácil</span>
+              </div>
+              <div class="exercicio-body">
+                <p>
+                  Um resistor de 220Ω está conectado a uma fonte de 5V. Qual é a
+                  corrente que flui pelo resistor?
+                </p>
+
+                <form class="exercicio-form">
+                  <div class="opcoes">
+                    <div class="opcao">
+                      <input type="radio" id="ex1-a" name="ex1" value="a" />
+                      <label for="ex1-a">a) 0.0227A</label>
+                    </div>
+                    <div class="opcao">
+                      <input type="radio" id="ex1-b" name="ex1" value="b" />
+                      <label for="ex1-b">b) 0.0277A</label>
+                    </div>
+                    <div class="opcao">
+                      <input type="radio" id="ex1-c" name="ex1" value="c" />
+                      <label for="ex1-c">c) 0.0227mA</label>
+                    </div>
+                    <div class="opcao">
+                      <input type="radio" id="ex1-d" name="ex1" value="d" />
+                      <label for="ex1-d">d) 22.7mA</label>
+                    </div>
+                  </div>
+
+                  <button type="button" class="verificar-btn" data-resposta="a">
+                    Verificar
+                  </button>
+                </form>
+
+                <div class="feedback-container hidden">
+                  <div class="feedback correto hidden">
+                    <p>
+                      ✓ Correto! A corrente é calculada usando I = V/R = 5V/220Ω
+                      = 0.0227A ou 22.7mA.
+                    </p>
+                  </div>
+                  <div class="feedback incorreto hidden">
+                    <p>✗ Incorreto. Tente novamente! Lembre-se que I = V/R.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Mais exercícios seriam adicionados aqui -->
+          </div>
+
+          <div class="paginacao">
+            <button id="anterior-pagina" disabled>Anterior</button>
+            <span id="pagina-atual">Página 1 de 5</span>
+            <button id="proxima-pagina">Próxima</button>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="container">
+        <p>&copy; 2025 CircuitLearn - Plataforma de Ensino de Eletrônica</p>
+        <p>
+          Desenvolvido para apoio educacional em engenharia e cursos técnicos
+        </p>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>

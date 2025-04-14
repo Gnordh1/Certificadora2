@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teoria - Plataforma de Ensino de Eletrônica</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>CircuitLearn</h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Início</a></li>
+                    <li><a href="teoria.html" class="active">Teoria</a></li>
+                    <li><a href="exercicios.html">Exercícios</a></li>
+                    <li><a href="simulador.html">Simulador</a></li>
+                    <li><a href="progresso.html">Meu Progresso</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="teoria-intro">
+            <div class="container">
+                <h2>Fundamentos de Eletrônica e Análise de Circuitos</h2>
+                <p>Selecione um tópico abaixo para começar a estudar ou use a barra de pesquisa para encontrar um assunto específico.</p>
+                <div class="search-bar">
+                    <input type="text" id="search-teoria" placeholder="Pesquisar tópicos...">
+                    <button id="search-button">Buscar</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="teoria-content">
+            <div class="container">
+                <div class="teoria-sidebar">
+                    <h3>Tópicos</h3>
+                    <ul id="topicos-lista">
+                        <li><a href="#lei-ohm" class="active">Lei de Ohm</a></li>
+                        <li><a href="#leis-kirchhoff">Leis de Kirchhoff</a></li>
+                        <li><a href="#teoremas">Teoremas de Thévenin/Norton</a></li>
+                        <li><a href="#componentes">Componentes Básicos</a></li>
+                        <li><a href="#analise-ac-dc">Análise AC/DC</a></li>
+                        <li><a href="#filtros">Filtros</a></li>
+                    </ul>
+                    <h3>Nível de Dificuldade</h3>
+                    <div class="dificuldade-filtros">
+                        <button class="filtro-btn active" data-nivel="todos">Todos</button>
+                        <button class="filtro-btn" data-nivel="facil">Fácil</button>
+                        <button class="filtro-btn" data-nivel="medio">Médio</button>
+                        <button class="filtro-btn" data-nivel="dificil">Difícil</button>
+                    </div>
+                </div>
+
+                <div class="teoria-main">
+                    <article id="lei-ohm" class="topico-conteudo" data-nivel="facil">
+                        <h2>Lei de Ohm</h2>
+                        <div class="nivel-indicador facil">Nível: Fácil</div>
+                        <p>A Lei de Ohm é um princípio fundamental da eletrônica que estabelece a relação entre tensão (V), corrente (I) e resistência (R) em um circuito elétrico.</p>
+                        
+                        <div class="formula-box">
+                            <h3>Fórmula</h3>
+                            <p class="formula">V = I × R</p>
+                            <p>Onde:</p>
+                            <ul>
+                                <li>V = Tensão em Volts (V)</li>
+                                <li>I = Corrente em Amperes (A)</li>
+                                <li>R = Resistência em Ohms (Ω)</li>
+                            </ul>
+                        </div>
+
+                        <h3>Aplicações</h3>
+                        <p>A Lei de Ohm é utilizada para:</p>
+                        <ul>
+                            <li>Calcular a corrente que flui em um circuito</li>
+                            <li>Determinar a tensão necessária para um circuito</li>
+                            <li>Calcular a resistência necessária para limitar a corrente</li>
+                        </ul>
+
+                        <div class="exemplo-box">
+                            <h3>Exemplo</h3>
+                            <p>Se uma resistência de 100Ω está conectada a uma fonte de 12V, qual é a corrente que flui pelo circuito?</p>
+                            <div class="solucao">
+                                <p>Usando a Lei de Ohm: I = V/R</p>
+                                <p>I = 12V / 100Ω = 0,12A = 120mA</p>
+                            </div>
+                        </div>
+
+                        <div class="interactive-demo">
+                            <h3>Demonstração Interativa</h3>
+                            <div class="ohm-calculator">
+                                <div class="calculator-inputs">
+                                    <div class="input-group">
+                                        <label for="tensao">Tensão (V):</label>
+                                        <input type="number" id="tensao" value="12">
+                                    </div>
+                                    <div class="input-group">
+                                        <label for="resistencia">Resistência (Ω):</label>
+                                        <input type="number" id="resistencia" value="100">
+                                    </div>
+                                    <button id="calcular-corrente">Calcular Corrente</button>
+                                </div>
+                                <div class="calculator-result">
+                                    <p>Corrente: <span id="resultado-corrente">0.12</span> A</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="links-relacionados">
+                            <h3>Links Relacionados</h3>
+                            <ul>
+                                <li><a href="#leis-kirchhoff">Leis de Kirchhoff</a></li>
+                                <li><a href="#componentes">Resistores</a></li>
+                                <li><a href="exercicios.html#lei-ohm">Exercícios sobre Lei de Ohm</a></li>
+                            </ul>
+                        </div>
+                    </article>
+
+                    <!-- Outros artigos de teoria seriam adicionados aqui -->
+                    <article id="leis-kirchhoff" class="topico-conteudo" data-nivel="medio">
+                        <h2>Leis de Kirchhoff</h2>
+                        <div class="nivel-indicador medio">Nível: Médio</div>
+                        <p>As Leis de Kirchhoff são fundamentais para a análise de circuitos elétricos mais complexos. Existem duas leis principais:</p>
+                        
+                        <h3>Lei das Correntes de Kirchhoff (LCK)</h3>
+                        <p>A soma das correntes que entram em um nó é igual à soma das correntes que saem desse nó.</p>
+                        
+                        <div class="formula-box">
+                            <h3>Fórmula</h3>
+                            <p class="formula">∑I<sub>entrada</sub> = ∑I<sub>saída</sub></p>
+                            <p>Ou, de forma equivalente:</p>
+                            <p class="formula">∑I = 0</p>
+                            <p>(Considerando correntes que entram como positivas e que saem como negativas)</p>
+                        </div>
+                        
+                        <h3>Lei das Tensões de Kirchhoff (LTK)</h3>
+                        <p>A soma das quedas de tensão em qualquer malha fechada de um circuito é igual a zero.</p>
+                        
+                        <div class="formula-box">
+                            <h3>Fórmula</h3>
+                            <p class="formula">∑V = 0</p>
+                        </div>
+                        
+                        <!-- Conteúdo adicional seria adicionado aqui -->
+                    </article>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 CircuitLearn - Plataforma de Ensino de Eletrônica</p>
+            <p>Desenvolvido para apoio educacional em engenharia e cursos técnicos</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
