@@ -1,39 +1,39 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Login | CircuitLearn</title>
     <link rel="stylesheet" href="./styles/base.css" />
-    <link rel="stylesheet" href="./styles/stylesLogin.css" />
-</head>
-<body class="login-page">
-<div class="login-container">
-    <h1>Bem-vindo ao <span class="destaque-azul">CircuitLearn</span>!</h1>
+    <link rel="stylesheet" href="./styles/login.css" />
+  </head>
+  <body class="login-page">
+    <div class="login-container">
+      <h1>Bem-vindo ao <span class="destaque-azul">CircuitLearn</span>!</h1>
 
-    <!-- Avatar do usuário -->
-    <div class="user-avatar">
+      <!-- Avatar do usuário -->
+      <div class="user-avatar">
         <img src="assets/icon-3d.jpg" alt="Ilustração de um microchip 3D" />
-    </div>
+      </div>
 
-    <!-- Formulário de login funcional -->
-    <form id="loginForm" class="login-form">
+      <!-- Formulário de login funcional -->
+      <form id="loginForm" class="login-form">
         <div class="input-container">
-            <input type="email" id="email" placeholder=" " required />
-            <label for="email">E-mail</label>
+          <input type="email" id="email" placeholder=" " required />
+          <label for="email">E-mail</label>
         </div>
 
         <div class="input-container">
-            <input type="password" id="senha" placeholder=" " required />
-            <label for="senha">Senha</label>
+          <input type="password" id="senha" placeholder=" " required />
+          <label for="senha">Senha</label>
         </div>
 
         <button type="submit" id="login-btn" class="btn primary">LOGIN</button>
 
         <div id="login-error" class="error-message hidden"></div>
-    </form>
-</div>
+      </form>
+    </div>
 
-<script src="scriptLogin.js"></script>
-</body>
+    <script src="scriptLogin.js"></script>
+  </body>
 </html>
