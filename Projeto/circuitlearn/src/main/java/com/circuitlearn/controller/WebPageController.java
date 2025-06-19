@@ -11,6 +11,16 @@ import org.springframework.web.bind.annotation.GetMapping;
 public class WebPageController {
 
     /**
+     * Mapeia a URL raiz ("/") para a página de login.
+     * Esta será a página inicial da aplicação.
+     * @return O caminho para o arquivo HTML de login.
+     */
+    @GetMapping("/")
+    public String mostrarPaginaInicial() {
+        return "forward:/login.html";
+    }
+
+    /**
      * Serve a página principal de listagem de exercícios.
      * @return O caminho para o arquivo HTML estático.
      */
