@@ -1,5 +1,3 @@
-
-
 /* --- SEÇÃO DE INTRODUÇÃO E RESUMO --- */
 .progresso-intro {
   background-color: var(--primary-color);
@@ -143,13 +141,12 @@ section h3::after {
 }
 .acerto-badge.medio {
   background-color: var(--warning-color);
-  color: var(--text-primary);
 }
 .acerto-badge.ruim {
   background-color: var(--error-color);
 }
 .acerto-badge.neutro {
-  background-color: var(--border-color);
+  background-color: #cdcdcd;
   color: var(--text-secondary);
 }
 

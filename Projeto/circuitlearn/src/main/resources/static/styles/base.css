@@ -6,16 +6,16 @@
   --primary-color: #2962ff;
   --primary-dark: #0039cb;
   --primary-light: #f0f5ff;
-  --success-color: #2e7d32;
-  --success-light: #e8f5e9;
-  --warning-color: #ff8f00;
-  --warning-light: #fff8e1;
-  --error-color: #c62828;
-  --error-light: #ffebee;
+  --success-color: #007c4e;
+  --success-light: #c5fce3;
+  --warning-color: #de6b00;
+  --warning-light: #fcdfc9;
+  --error-color: #bd0016;
+  --error-light: #fdcbd4;
   --text-primary: #333333;
-  --text-secondary: #666666;
+  --text-secondary: #6d6d6d;
   --text-light: #999999;
-  --bg-color: #f4f6f8; /* Fundo principal mais suave */
+  --bg-color: #f4f6f8;
   --bg-light: #f9f9f9;
   --bg-white: #ffffff;
   --border-color: #aaaaaa;
