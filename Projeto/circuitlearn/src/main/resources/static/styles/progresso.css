@@ -1,0 +1,214 @@
+
+
+/* --- SEÇÃO DE INTRODUÇÃO E RESUMO --- */
+.progresso-intro {
+  background-color: var(--primary-color);
+  padding: 2.5rem 0;
+  text-align: center;
+  border-bottom: 1px solid var(--border-color);
+}
+.progresso-intro h2 {
+  color: var(--primary-light);
+  margin-bottom: 0.5rem;
+  font-size: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+.progresso-intro p {
+  color: var(--primary-light);
+  max-width: 600px;
+  margin: 0 auto 1.5rem auto;
+}
+.progresso-geral-container {
+  max-width: 700px;
+  margin: 0 auto;
+  background-color: var(--bg-white);
+  padding: 1.5rem;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow-sm);
+}
+.progresso-geral-stats {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 1rem;
+}
+.stat-item {
+  display: flex;
+  flex-direction: column;
+}
+.stat-value {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--primary-color);
+}
+.stat-label {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+}
+.progresso-barra-geral {
+  height: 12px;
+  background-color: var(--border-color);
+  border-radius: 6px;
+  overflow: hidden;
+  margin-bottom: 0.5rem;
+}
+.progresso-preenchimento {
+  height: 100%;
+  width: 0;
+  background: linear-gradient(90deg, var(--primary-color), var(--primary-dark));
+  transition: width 1s ease-out;
+}
+.percentual-label {
+  font-size: 0.85rem;
+  color: var(--text-light);
+}
+
+/* --- SEÇÕES DE CONTEÚDO PRINCIPAL --- */
+.progresso-detalhado,
+.recomendacoes {
+  padding: 3rem 0;
+}
+.progresso-detalhado {
+  background-color: var(--bg-color); /* Fundo consistente com exercicios.html */
+}
+section h3 {
+  text-align: center;
+  font-size: 1.8rem;
+  color: var(--text-primary);
+  margin-bottom: 2rem;
+  position: relative;
+}
+section h3::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 3px;
+  background-color: var(--primary-color);
+  margin: 0.5rem auto 0;
+  border-radius: 2px;
+}
+
+/* --- GRID E CARDS DE PROGRESSO POR TÓPICO --- */
+.topicos-progresso {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 1.5rem;
+}
+
+.topico-progresso-card {
+  background-color: var(--bg-white);
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius);
+  display: flex;
+  flex-direction: column;
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition);
+}
+.topico-progresso-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+}
+
+.progresso-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.25rem 1.5rem;
+  border-bottom: 1px solid #f0f0f0;
+}
+.progresso-card-header h4 {
+  font-size: 1.2rem;
+  color: var(--text-primary);
+  margin: 0;
+}
+.progresso-card-body {
+  padding: 1.5rem;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.acerto-badge {
+  padding: 0.3rem 0.8rem;
+  border-radius: 12px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--bg-white);
+  white-space: nowrap;
+}
+.acerto-badge.bom {
+  background-color: var(--success-color);
+}
+.acerto-badge.medio {
+  background-color: var(--warning-color);
+  color: var(--text-primary);
+}
+.acerto-badge.ruim {
+  background-color: var(--error-color);
+}
+.acerto-badge.neutro {
+  background-color: var(--border-color);
+  color: var(--text-secondary);
+}
+
+.topico-estatisticas {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  margin-bottom: 1rem;
+}
+.estatistica-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 4px 0;
+}
+.estatistica-valor {
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.progresso-barra-container {
+  width: 100%;
+  height: 10px;
+  background-color: var(--border-color);
+  border-radius: 5px;
+  overflow: hidden;
+  margin: 0.5rem 0;
+}
+.topico-progresso-card .btn {
+  margin-top: auto;
+  width: 100%;
+}
+
+/* --- SEÇÃO DE RECOMENDAÇÕES (Estilo específico da pág. de progresso) --- */
+.recomendacao-card {
+  background: var(--bg-white);
+  border-left: 5px solid var(--primary-color);
+  border-radius: var(--border-radius);
+  padding: 1.5rem;
+  margin-bottom: 1rem;
+  box-shadow: var(--shadow-sm);
+}
+.recomendacao-card.positiva {
+  border-left-color: var(--success-color);
+}
+.recomendacao-card.negativa {
+  border-left-color: var(--error-color);
+}
+.recomendacao-card h4 {
+  margin-bottom: 0.5rem;
+  color: var(--text-primary);
+}
+.recomendacao-card p {
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+.loading-placeholder {
+  padding: 2rem;
+  text-align: center;
+  color: var(--text-light);
+  font-style: italic;
+  grid-column: 1 / -1;
+}
