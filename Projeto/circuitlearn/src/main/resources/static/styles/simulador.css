@@ -1,0 +1,245 @@
+/* === ESTILOS ESPECÍFICOS PARA A PÁGINA DO SIMULADOR === */
+
+/* --- Seção de Introdução --- */
+.simulador-intro {
+  background: linear-gradient(
+    135deg,
+    var(--primary-color) 0%,
+    var(--primary-dark) 100%
+  );
+  color: var(--bg-white);
+  padding: 3rem 0;
+  text-align: center;
+}
+.simulador-intro h2 {
+  font-size: 2.2rem;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+.simulador-intro p {
+  max-width: 700px;
+  margin: 0 auto 2.5rem auto;
+  font-size: 1.1rem;
+  opacity: 0.9;
+}
+
+/* Opções (Simulador Integrado / Versão Completa) */
+.simulador-opcoes {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+}
+.opcao-card {
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: var(--border-radius);
+  padding: 1.5rem;
+  max-width: 320px;
+  flex-grow: 1;
+  text-align: left;
+  transition: var(--transition);
+  display: flex;
+  flex-direction: column;
+}
+.opcao-card:hover {
+  transform: translateY(-5px);
+  background-color: rgba(255, 255, 255, 0.15);
+}
+.opcao-card h3 {
+  margin-bottom: 0.75rem;
+  color: #fff;
+}
+.opcao-card p {
+  font-size: 0.9rem;
+  opacity: 0.9;
+  flex-grow: 1;
+  margin-bottom: 1.5rem;
+}
+.opcao-card .btn.secondary {
+  background-color: var(--bg-white);
+  color: var(--primary-color);
+  align-self: flex-start;
+}
+.opcao-card .btn.secondary:hover {
+  background-color: var(--primary-light);
+  color: var(--primary-dark);
+}
+
+/* --- Seção do Iframe do Simulador --- */
+.simulador-secao-iframe {
+  padding: 3rem 0;
+  background-color: var(--bg-light);
+}
+.simulador-workspace {
+  height: 600px;
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--border-color);
+  position: relative;
+}
+#falstad-iframe {
+  background-color: #000; /* Fundo preto para o iframe antes de carregar */
+}
+/* O loader agora usa as classes de 'base.css' e será escondido via JS */
+.loading-container.hidden {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.5s ease-out;
+}
+
+/* --- Seção de Desafios --- */
+.desafios-simulacao {
+  padding: 3rem 0;
+  background-color: var(--bg-color);
+}
+.desafios-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+.desafios-header h3 {
+  font-size: 1.8rem;
+  color: var(--text-primary);
+  margin: 0;
+}
+/* Filtros com estilo de 'pills' */
+.filtros-desafio {
+  display: flex;
+  gap: 10px;
+}
+.filtro-btn {
+  padding: 6px 16px;
+  border: 1px solid var(--border-color);
+  background-color: var(--bg-white);
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: var(--transition);
+}
+.filtro-btn:hover {
+  background-color: var(--primary-light);
+  color: var(--primary-color);
+  border-color: var(--primary-color);
+}
+.filtro-btn.active {
+  background-color: var(--primary-color);
+  color: var(--bg-white);
+  border-color: var(--primary-color);
+  font-weight: 600;
+}
+
+/* Lista e Cards de Desafio */
+.desafios-lista {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 1.5rem;
+}
+.desafio-card {
+  background-color: var(--bg-white);
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius);
+  padding: 1.5rem;
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition);
+  display: flex;
+  gap: 1.25rem;
+  align-items: flex-start;
+}
+.desafio-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--primary-color);
+}
+.desafio-card-icon {
+  font-size: 1.8rem;
+  color: var(--primary-color);
+  margin-top: 5px;
+  min-width: 30px;
+  text-align: center;
+}
+.desafio-card-content {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+.desafio-card-content h4 {
+  font-size: 1.2rem;
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+}
+.desafio-card-content p {
+  color: var(--text-secondary);
+  margin-bottom: 1rem;
+  flex-grow: 1;
+}
+.desafio-card-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 1.25rem;
+}
+.tag {
+  padding: 4px 10px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  border-radius: 12px;
+}
+.desafio-card-content .btn i {
+  transition: transform 0.2s ease;
+}
+.desafio-card:hover .btn i {
+  transform: translateX(4px);
+}
+
+/* Cores das Tags (consistente com as cores do sistema) */
+.tag-basico {
+  background-color: var(--success-light);
+  color: var(--success-color);
+}
+.tag-led {
+  background-color: var(--error-light);
+  color: var(--error-color);
+}
+.tag-intermediario {
+  background-color: var(--warning-light);
+  color: var(--warning-color);
+}
+.tag-circuitos {
+  background-color: var(--primary-light);
+  color: var(--primary-dark);
+}
+.tag-avancado {
+  background-color: var(--error-light);
+  color: var(--error-color);
+}
+.tag-logica {
+  background-color: #ede7f6;
+  color: #5e35b1;
+} /* Exemplo de cor customizada */
+
+/* Animação de Scroll (mantida, pois é uma ótima melhoria de UX) */
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+.animate-on-scroll.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+/* Atraso para animação escalonada */
+.desafios-lista .animate-on-scroll:nth-child(2) {
+  transition-delay: 0.1s;
+}
+.desafios-lista .animate-on-scroll:nth-child(3) {
+  transition-delay: 0.2s;
+}

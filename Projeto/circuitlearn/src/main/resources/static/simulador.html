@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Simulador de Circuitos | CircuitLearn</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="./styles/base.css" />
+    <link rel="stylesheet" href="./styles/simulador.css" />
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <div class="logo">
+          <i class="fas fa-microchip"></i>
+          <h1>CircuitLearn</h1>
+        </div>
+        <nav>
+          <button
+            class="menu-toggle"
+            aria-label="Menu de navegação"
+            aria-expanded="false"
+          >
+            <i class="fas fa-bars"></i>
+          </button>
+          <ul class="nav-menu">
+            <li>
+              <a href="inicio.html"><i class="fas fa-home"></i> Início</a>
+            </li>
+            <li>
+              <a href="teoria.html"><i class="fas fa-book"></i> Teoria</a>
+            </li>
+            <li>
+              <a href="exercicios.html"
+                ><i class="fas fa-tasks"></i> Exercícios</a
+              >
+            </li>
+            <li>
+              <a href="simulador.html" class="active"
+                ><i class="fas fa-bolt"></i> Simulador</a
+              >
+            </li>
+            <li>
+              <a href="progresso.html"
+                ><i class="fas fa-chart-line"></i> Meu Progresso</a
+              >
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="simulador-intro">
+        <div class="container">
+          <h2><i class="fas fa-bolt"></i> Simulador de Circuitos</h2>
+          <p>
+            Use o simulador interativo para montar circuitos, testar conceitos e
+            resolver desafios práticos em tempo real.
+          </p>
+          <div class="simulador-opcoes">
+            <div class="opcao-card">
+              <h3>Simulador Integrado</h3>
+              <p>
+                Use o simulador abaixo para carregar exemplos ou criar seus
+                próprios circuitos.
+              </p>
+              <a href="#simulador-integrado" class="btn secondary"
+                >Ir para o Simulador</a
+              >
+            </div>
+            <div class="opcao-card">
+              <h3>Versão Completa</h3>
+              <p>
+                Para recursos avançados, abra o simulador Falstad em uma nova
+                janela.
+              </p>
+              <a
+                href="https://www.falstad.com/circuit/circuitjs.html"
+                target="_blank"
+                class="btn secondary"
+                >Abrir Falstad</a
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="simulador-integrado" class="simulador-secao-iframe">
+        <div class="container">
+          <div class="simulador-workspace">
+            <div id="loader" class="loading-container">
+              <div class="loading-spinner">
+                <div class="spinner-circle"></div>
+                <span>Carregando Simulador...</span>
+              </div>
+            </div>
+            <iframe
+              id="falstad-iframe"
+              width="100%"
+              height="100%"
+              src="https://www.falstad.com/circuit/circuitjs.html"
+              frameborder="0"
+              allowfullscreen
+            ></iframe>
+          </div>
+        </div>
+      </section>
+
+      <section class="desafios-simulacao">
+        <div class="container">
+          <div class="desafios-header">
+            <h3>Desafios de Simulação</h3>
+            <div class="filtros-desafio">
+              <button class="filtro-btn active" data-filter="all">Todos</button>
+              <button class="filtro-btn" data-filter="basico">Básico</button>
+              <button class="filtro-btn" data-filter="intermediario">
+                Intermediário
+              </button>
+              <button class="filtro-btn" data-filter="avancado">
+                Avançado
+              </button>
+            </div>
+          </div>
+          <div class="desafios-lista">
+            <!-- Desafio 1 -->
+            <div
+              class="desafio-card animate-on-scroll"
+              data-difficulty="basico"
+            >
+              <div class="desafio-card-icon">
+                <i class="fa-solid fa-lightbulb"></i>
+              </div>
+              <div class="desafio-card-content">
+                <h4>Acenda o LED</h4>
+                <p>
+                  Monte o circuito mais fundamental: uma fonte de tensão, um
+                  resistor e um LED. Calcule o resistor para que o LED não
+                  queime!
+                </p>
+                <div class="desafio-card-tags">
+                  <span class="tag tag-basico">Básico</span>
+                  <span class="tag tag-led">LED</span>
+                </div>
+                <a href="#simulador-integrado" class="btn secondary"
+                  >Tentar Desafio <i class="fa-solid fa-arrow-right"></i
+                ></a>
+              </div>
+            </div>
+
+            <!-- Desafio 2 -->
+            <div
+              class="desafio-card animate-on-scroll"
+              data-difficulty="basico"
+            >
+              <div class="desafio-card-icon">
+                <i class="fa-solid fa-toggle-on"></i>
+              </div>
+              <div class="desafio-card-content">
+                <h4>Controle com Interruptor</h4>
+                <p>
+                  Adicione um interruptor ao circuito anterior para que seja
+                  possível ligar e desligar o LED sem remover componentes.
+                </p>
+                <div class="desafio-card-tags">
+                  <span class="tag tag-basico">Básico</span>
+                  <span class="tag tag-controle">Controle</span>
+                </div>
+                <a href="#simulador-integrado" class="btn secondary"
+                  >Tentar Desafio <i class="fa-solid fa-arrow-right"></i
+                ></a>
+              </div>
+            </div>
+
+            <!-- Desafio 3 -->
+            <div
+              class="desafio-card animate-on-scroll"
+              data-difficulty="basico"
+            >
+              <div class="desafio-card-icon">
+                <i class="fa-solid fa-ruler-combined"></i>
+              </div>
+              <div class="desafio-card-content">
+                <h4>Lei de Ohm na Prática</h4>
+                <p>
+                  Crie um circuito com uma fonte de 10V e um resistor de 1kΩ.
+                  Use os medidores para confirmar a corrente (I = V/R).
+                </p>
+                <div class="desafio-card-tags">
+                  <span class="tag tag-basico">Básico</span>
+                  <span class="tag tag-conceitual">Conceitual</span>
+                </div>
+                <a href="#simulador-integrado" class="btn secondary"
+                  >Tentar Desafio <i class="fa-solid fa-arrow-right"></i
+                ></a>
+              </div>
+            </div>
+
+            <!-- Desafio 4 -->
+            <div
+              class="desafio-card animate-on-scroll"
+              data-difficulty="intermediario"
+            >
+              <div class="desafio-card-icon">
+                <i class="fa-solid fa-divide"></i>
+              </div>
+              <div class="desafio-card-content">
+                <h4>Divisor de Tensão</h4>
+                <p>
+                  Monte um circuito com uma fonte de 12V e dois resistores
+                  iguais (ex: 1kΩ) em série. Meça a tensão no ponto central.
+                </p>
+                <div class="desafio-card-tags">
+                  <span class="tag tag-intermediario">Intermediário</span>
+                  <span class="tag tag-circuitos">Circuitos</span>
+                </div>
+                <a href="#simulador-integrado" class="btn secondary"
+                  >Tentar Desafio <i class="fa-solid fa-arrow-right"></i
+                ></a>
+              </div>
+            </div>
+
+            <!-- Desafio 5 -->
+            <div
+              class="desafio-card animate-on-scroll"
+              data-difficulty="intermediario"
+            >
+              <div class="desafio-card-icon">
+                <i class="fa-solid fa-sitemap"></i>
+              </div>
+              <div class="desafio-card-content">
+                <h4>Resistores em Paralelo</h4>
+                <p>
+                  Coloque dois resistores diferentes (ex: 1kΩ e 2.2kΩ) em
+                  paralelo. Meça a corrente total e a corrente em cada ramo.
+                </p>
+                <div class="desafio-card-tags">
+                  <span class="tag tag-intermediario">Intermediário</span>
+                  <span class="tag tag-circuitos">Circuitos</span>
+                </div>
+                <a href="#simulador-integrado" class="btn secondary"
+                  >Tentar Desafio <i class="fa-solid fa-arrow-right"></i
+                ></a>
+              </div>
+            </div>
+
+            <!-- Desafio 6 -->
+            <div
+              class="desafio-card animate-on-scroll"
+              data-difficulty="intermediario"
+            >
+              <div class="desafio-card-icon">
+                <i class="fa-solid fa-sliders"></i>
+              </div>
+              <div class="desafio-card-content">
+                <h4>Controle de Brilho</h4>
+                <p>
+                  Use um potenciômetro (resistor variável) para controlar a
+                  intensidade do brilho de um LED de forma contínua.
+                </p>
+                <div class="desafio-card-tags">
+                  <span class="tag tag-intermediario">Intermediário</span>
+                  <span class="tag tag-led">LED</span>
+                </div>
+                <a href="#simulador-integrado" class="btn secondary"
+                  >Tentar Desafio <i class="fa-solid fa-arrow-right"></i
+                ></a>
+              </div>
+            </div>
+
+            <!-- Desafio 7 -->
+            <div
+              class="desafio-card animate-on-scroll"
+              data-difficulty="intermediario"
+            >
+              <div class="desafio-card-icon">
+                <i class="fa-solid fa-bolt"></i>
+              </div>
+              <div class="desafio-card-content">
+                <h4>Cálculo de Potência</h4>
+                <p>
+                  Em um circuito simples com um resistor, meça a tensão sobre
+                  ele e a corrente que o atravessa. Calcule a potência dissipada
+                  (P = V * I).
+                </p>
+                <div class="desafio-card-tags">
+                  <span class="tag tag-intermediario">Intermediário</span>
+                  <span class="tag tag-conceitual">Conceitual</span>
+                </div>
+                <a href="#simulador-integrado" class="btn secondary"
+                  >Tentar Desafio <i class="fa-solid fa-arrow-right"></i
+                ></a>
+              </div>
+            </div>
+
+            <!-- Desafio 8 -->
+            <div
+              class="desafio-card animate-on-scroll"
+              data-difficulty="intermediario"
+            >
+              <div class="desafio-card-icon">
+                <i class="fa-solid fa-circle-nodes"></i>
+              </div>
+              <div class="desafio-card-content">
+                <h4>Dois LEDs em Série</h4>
+                <p>
+                  Monte dois LEDs em série com um resistor limitador. Observe a
+                  tensão necessária para acendê-los e a corrente no circuito.
+                </p>
+                <div class="desafio-card-tags">
+                  <span class="tag tag-intermediario">Intermediário</span>
+                  <span class="tag tag-led">LED</span>
+                </div>
+                <a href="#simulador-integrado" class="btn secondary"
+                  >Tentar Desafio <i class="fa-solid fa-arrow-right"></i
+                ></a>
+              </div>
+            </div>
+
+            <!-- Desafio 9 -->
+            <div
+              class="desafio-card animate-on-scroll"
+              data-difficulty="avancado"
+            >
+              <div class="desafio-card-icon">
+                <i class="fa-solid fa-circle-question"></i>
+              </div>
+              <div class="desafio-card-content">
+                <h4>Descubra o Resistor</h4>
+                <p>
+                  Um LED precisa de 2V e 20mA para funcionar. Se a sua fonte é
+                  de 9V, qual resistor você deve usar? Monte para confirmar.
+                </p>
+                <div class="desafio-card-tags">
+                  <span class="tag tag-avancado">Avançado</span>
+                  <span class="tag tag-calculo">Cálculo</span>
+                </div>
+                <a href="#simulador-integrado" class="btn secondary"
+                  >Tentar Desafio <i class="fa-solid fa-arrow-right"></i
+                ></a>
+              </div>
+            </div>
+
+            <!-- Desafio 10 -->
+            <div
+              class="desafio-card animate-on-scroll"
+              data-difficulty="avancado"
+            >
+              <div class="desafio-card-icon">
+                <i class="fa-solid fa-door-closed"></i>
+              </div>
+              <div class="desafio-card-content">
+                <h4>Porta Lógica AND</h4>
+                <p>
+                  Use dois interruptores em SÉRIE para controlar um LED. O LED
+                  só deve acender se AMBOS os interruptores estiverem ligados.
+                </p>
+                <div class="desafio-card-tags">
+                  <span class="tag tag-avancado">Avançado</span>
+                  <span class="tag tag-logica">Lógica</span>
+                </div>
+                <a href="#simulador-integrado" class="btn secondary"
+                  >Tentar Desafio <i class="fa-solid fa-arrow-right"></i
+                ></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-logo">
+            <i class="fas fa-microchip"></i>
+            <h2>CircuitLearn</h2>
+            <p>Aprenda eletrônica de forma interativa</p>
+          </div>
+          <div class="footer-links">
+            <div class="footer-column">
+              <h3>Navegação</h3>
+              <ul>
+                <li><a href="exercicios.html">Início</a></li>
+                <li><a href="teoria.html">Teoria</a></li>
+                <li><a href="exercicios.html">Exercícios</a></li>
+                <li><a href="simulador.html">Simulador</a></li>
+              </ul>
+            </div>
+            <div class="footer-column">
+              <h3>Contato</h3>
+              <ul>
+                <li><a href="#">Suporte</a></li>
+                <li><a href="#">Feedback</a></li>
+                <li><a href="#">Sobre Nós</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="copyright">
+          <p>© 2025 CircuitLearn - Plataforma de Ensino de Eletrônica</p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="scriptSimulator.js"></script>
+  </body>
+</html>
