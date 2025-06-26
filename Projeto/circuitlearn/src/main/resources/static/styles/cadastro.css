@@ -1,0 +1,156 @@
+@import url("login.css");
+
+body.cadastro-page {
+  background-color: var(--bg-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 20px;
+  min-height: 100vh;
+}
+
+.cadastro-container {
+  max-width: 450px;
+  width: 100%;
+  padding: 40px;
+  background-color: var(--bg-white);
+  border-radius: 12px;
+  box-shadow: var(--shadow-lg);
+  text-align: center;
+  animation: fadeIn 0.5s ease-out;
+}
+
+.cadastro-container .logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  color: var(--primary-color);
+  margin-bottom: 15px;
+}
+
+.cadastro-container .logo i {
+  font-size: 2.2rem;
+}
+.cadastro-container .logo h1 {
+  font-size: 2.2rem;
+  font-family: "Poppins", sans-serif;
+}
+
+.cadastro-container h2 {
+  font-size: 1.5rem;
+  color: var(--text-primary);
+  margin-bottom: 10px;
+}
+
+.cadastro-container p {
+  color: var(--text-secondary);
+  margin-bottom: 30px;
+}
+
+.cadastro-form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.input-container {
+  position: relative;
+  margin-bottom: 25px;
+}
+
+.input-wrapper {
+  position: relative;
+}
+
+.input-container input {
+  width: 100%;
+  padding: 15px;
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius);
+  background: transparent;
+  color: var(--text-primary);
+  font-size: 16px;
+  font-family: inherit;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+.input-container .input-wrapper input[type="password"] {
+  padding-right: 45px;
+}
+.input-container .input-wrapper input[type="text"],
+.input-container .input-wrapper input[type="email"] {
+  padding-right: 15px;
+}
+
+.input-container input:focus {
+  border-color: var(--primary-color);
+}
+
+.input-container label {
+  position: absolute;
+  left: 15px;
+  top: 12px;
+  color: var(--text-secondary);
+  background-color: var(--bg-white);
+  padding: 0 5px;
+  font-size: 16px;
+  transition: 0.2s ease all;
+  pointer-events: none;
+}
+
+.input-container.focused label {
+  top: -10px;
+  font-size: 14px;
+  color: var(--primary-color);
+}
+
+/* Mensagem de erro específica do campo */
+.field-error-message {
+  font-size: 0.8rem;
+  color: var(--error-color);
+  text-align: left;
+  padding-left: 5px;
+  margin-top: 4px;
+  display: block;
+}
+
+/* Ícone de visualizar/ocultar senha */
+.password-toggle {
+  position: absolute;
+  top: 50%;
+  right: 15px;
+  transform: translateY(-50%);
+  color: var(--text-light);
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.password-toggle:hover {
+  color: var(--primary-color);
+}
+
+.cadastro-form .btn {
+  width: 100%;
+  padding: 15px;
+  margin-top: 15px;
+  font-size: 1rem;
+  letter-spacing: 0.8px;
+  font-weight: 600;
+}
+
+.login-link {
+  margin-top: 25px;
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+}
+
+.login-link a {
+  color: var(--primary-color);
+  font-weight: 600;
+  text-decoration: none;
+}
+.login-link a:hover {
+  text-decoration: underline;
+}
