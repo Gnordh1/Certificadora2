@@ -28,6 +28,11 @@ ul {
   list-style: none;
 }
 
+.aplicacoesleideohm{
+  list-style: disc;
+  margin-left: 20px;
+}
+
 /* Botões */
 .btn {
   display: inline-block;
@@ -392,6 +397,38 @@ footer p {
   margin: 20px 0;
 }
 
+th, td{
+padding: 10px;
+text-align: center;
+width: 300px;
+}
+
+table, th, td {
+border: 1px solid black;
+}
+
+th{
+font-weight: bold;
+}
+
+tr:nth-child(even) {
+background-color: #DCEBE6;
+}
+
+tr:hover:nth-child(1n + 2) {
+background-color: #085F63;
+color: #fff;
+}
+
+table {
+border-collapse: collapse;
+margin: auto;
+}
+
+ol{
+  margin-left: 20px;
+}
+
 .formula {
   font-family: "Courier New", Courier, monospace;
   font-size: 1.2rem;
@@ -410,6 +447,10 @@ footer p {
   display: flex;
   flex-direction: column;
   gap: 20px;
+}
+
+.simbolo {
+  text-align: center;
 }
 
 .calculator-inputs {
