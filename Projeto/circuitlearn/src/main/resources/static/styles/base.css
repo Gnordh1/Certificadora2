@@ -147,6 +147,12 @@ header h1 {
   font-family: "Poppins", sans-serif;
 }
 
+header nav {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
 nav .nav-menu {
   display: flex;
   gap: 10px;
@@ -185,6 +191,95 @@ nav ul li a.active {
   font-size: 1.5rem;
   cursor: pointer;
 }
+
+/* ===== ESTILOS DO DROPDOWN DE USUÁRIO ===== */
+.user-dropdown {
+  position: relative;
+}
+
+.user-dropdown-toggle {
+  background: transparent;
+  border: 2px solid transparent;
+  border-radius: 25px;
+  padding: 4px 12px 4px 4px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  transition: var(--transition);
+  color: var(--text-primary);
+  font-family: inherit;
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+.user-dropdown-toggle:hover {
+  background-color: var(--primary-light);
+}
+.user-dropdown-toggle:focus,
+.user-dropdown.active .user-dropdown-toggle {
+  outline: none;
+  border-color: var(--primary-light);
+  box-shadow: 0 0 0 2px var(--primary-color);
+}
+.user-dropdown-toggle i {
+  font-size: 0.8rem;
+  transition: transform 0.3s ease;
+}
+.user-dropdown.active .user-dropdown-toggle i {
+  transform: rotate(180deg);
+}
+
+/* ESTILO PARA O AVATAR */
+.dropdown-avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  object-fit: cover; /* Garante que a imagem preencha o círculo sem distorcer */
+  border: 1px solid var(--border-color);
+  background-color: var(--primary-light); /* Cor de fundo caso a imagem falhe */
+}
+
+.user-dropdown-menu {
+  position: absolute;
+  top: calc(100% + 10px);
+  right: 0;
+  background-color: var(--bg-white);
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow-lg);
+  min-width: 200px;
+  z-index: 1010;
+  border: 1px solid var(--border-color);
+  padding: 8px 0;
+
+  /* Animação e visibilidade */
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s;
+}
+.user-dropdown.active .user-dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.user-dropdown-menu a {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 15px;
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+}
+.user-dropdown-menu a:hover {
+  background-color: var(--primary-light);
+  color: var(--primary-color);
+}
+.user-dropdown-menu a i {
+  width: 20px;
+  text-align: center;
+}
+/* ===== FIM DOS ESTILOS DO DROPDOWN ===== */
 
 /* ===== Footer (Padrão para todo o site) ===== */
 footer {
@@ -319,6 +414,9 @@ footer {
 @media (max-width: 768px) {
   header .container {
     position: relative;
+  }
+  header nav {
+    gap: 10px;
   }
 
   .menu-toggle {

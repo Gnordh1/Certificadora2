@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="CircuitLearn - Aprenda Eletrônica e Análise de Circuitos com uma plataforma interativa completa."
+    />
+    <title>Início | CircuitLearn - Plataforma de Ensino de Eletrônica</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="./styles/base.css" />
+    <link rel="stylesheet" href="./styles/inicio.css" />
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <div class="logo">
+          <i class="fas fa-microchip"></i>
+          <h1>CircuitLearn</h1>
+        </div>
+        <nav>
+          <button
+            class="menu-toggle"
+            aria-label="Menu de navegação"
+            aria-expanded="false"
+          >
+            <i class="fas fa-bars"></i>
+          </button>
+          <ul class="nav-menu">
+            <li>
+              <a href="inicio.html" class="active"
+                ><i class="fas fa-home"></i> Início</a
+              >
+            </li>
+            <li>
+              <a href="teoria.html"><i class="fas fa-book"></i> Teoria</a>
+            </li>
+            <li>
+              <a href="exercicios.html"
+                ><i class="fas fa-tasks"></i> Exercícios</a
+              >
+            </li>
+            <li>
+              <a href="simulador.html"><i class="fas fa-bolt"></i> Simulador</a>
+            </li>
+            <li>
+              <a href="progresso.html"
+                ><i class="fas fa-chart-line"></i> Meu Progresso</a
+              >
+            </li>
+            <li id="login-nav-link" style="display: none">
+              <a href="login.html"><i class="fas fa-sign-in-alt"></i> Login</a>
+            </li>
+          </ul>
+
+          <div id="user-info-nav" class="user-dropdown" style="display: none">
+            <button
+              class="user-dropdown-toggle"
+              aria-haspopup="true"
+              aria-expanded="false"
+            >
+              <img
+                id="user-avatar-img"
+                src="assets\icon-3d.jpg"
+                alt="Avatar do usuário"
+                class="dropdown-avatar"
+              />
+              <span id="user-display-name"></span>
+              <i class="fas fa-chevron-down"></i>
+            </button>
+            <div class="user-dropdown-menu" role="menu">
+              <a href="#" id="logout-btn" role="menuitem">
+                <i class="fas fa-sign-out-alt"></i> Sair
+              </a>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="container hero-container">
+          <div class="hero-content">
+            <h2 class="hero-title">
+              Desvende o Mundo da Eletrônica de Forma Interativa
+            </h2>
+            <p class="hero-subtitle">
+              Sua jornada para dominar a análise de circuitos começa aqui.
+              Aprenda, pratique e simule em um só lugar.
+            </p>
+            <div class="cta-buttons">
+              <a href="cadastro.html" class="btn primary"
+                >Crie sua Conta Grátis</a
+              >
+              <a href="teoria.html" class="btn secondary-hero"
+                >Explorar Tópicos</a
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="features">
+        <div class="container">
+          <h2 class="section-title">Uma Plataforma Completa</h2>
+          <div class="feature-grid">
+            <div class="feature-card">
+              <div class="feature-icon"><i class="fas fa-book-open"></i></div>
+              <h3>Conteúdo Teórico</h3>
+              <p>
+                Aprenda os fundamentos com explicações claras e exemplos
+                práticos.
+              </p>
+            </div>
+            <div class="feature-card">
+              <div class="feature-icon"><i class="fas fa-tasks"></i></div>
+              <h3>Exercícios Interativos</h3>
+              <p>
+                Teste seus conhecimentos e receba feedback imediato para
+                aprender mais rápido.
+              </p>
+            </div>
+            <div class="feature-card">
+              <div class="feature-icon"><i class="fas fa-bolt"></i></div>
+              <h3>Simulador de Circuitos</h3>
+              <p>
+                Valide seus cálculos e veja a teoria funcionando em um ambiente
+                virtual.
+              </p>
+            </div>
+            <div class="feature-card">
+              <div class="feature-icon"><i class="fas fa-chart-line"></i></div>
+              <h3>Acompanhamento de Progresso</h3>
+              <p>
+                Monitore seu desempenho e foque nos tópicos que mais precisa.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="topics">
+        <div class="container">
+          <h2 class="section-title">Explore Nossos Tópicos</h2>
+          <div class="topic-grid">
+            <a href="teoria.html#lei-ohm" class="topic-card">
+              <div class="topic-icon">
+                <i class="fas fa-ruler-combined"></i>
+              </div>
+              <h3>Lei de Ohm</h3>
+              <p>A relação fundamental entre tensão, corrente e resistência.</p>
+            </a>
+            <a href="teoria.html#leis-kirchhoff" class="topic-card">
+              <div class="topic-icon"><i class="fas fa-sitemap"></i></div>
+              <h3>Leis de Kirchhoff</h3>
+              <p>As leis de corrente e tensão que governam os circuitos.</p>
+            </a>
+            <a href="teoria.html#teoremas" class="topic-card">
+              <div class="topic-icon">
+                <i class="fas fa-project-diagram"></i>
+              </div>
+              <h3>Thévenin & Norton</h3>
+              <p>Simplifique circuitos complexos com estes teoremas.</p>
+            </a>
+            <a href="teoria.html#componentes" class="topic-card">
+              <div class="topic-icon"><i class="fas fa-microchip"></i></div>
+              <h3>Componentes</h3>
+              <p>Conheça resistores, capacitores, diodos e transistores.</p>
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-logo">
+            <i class="fas fa-microchip"></i>
+            <h2>CircuitLearn</h2>
+            <p>Aprenda eletrônica de forma interativa</p>
+          </div>
+          <div class="footer-links">
+            <div class="footer-column">
+              <h3>Navegação</h3>
+              <ul>
+                <li><a href="inicio.html">Início</a></li>
+                <li><a href="teoria.html">Teoria</a></li>
+                <li><a href="exercicios.html">Exercícios</a></li>
+                <li><a href="simulador.html">Simulador</a></li>
+              </ul>
+            </div>
+            <div class="footer-column">
+              <h3>Contato</h3>
+              <ul>
+                <li><a href="#">Suporte</a></li>
+                <li><a href="#">Feedback</a></li>
+                <li><a href="#">Sobre Nós</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="copyright">
+          <p>© 2025 CircuitLearn - Plataforma de Ensino de Eletrônica</p>
+          <p>
+            Desenvolvido para apoio educacional em engenharia e cursos técnicos
+          </p>
+        </div>
+      </div>
+    </footer>
+    <script src="scriptInicio.js"></script>
+  </body>
+</html>

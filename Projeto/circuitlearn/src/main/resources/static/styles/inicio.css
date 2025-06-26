@@ -1,0 +1,186 @@
+/* ===== ESTILOS PARA A PÁGINA INICIAL (inicio.html) ===== */
+
+/* --- Hero Section (SIMPLIFICADA E CENTRALIZADA) --- */
+.hero {
+  background-image: linear-gradient(
+    135deg,
+    var(--primary-color) 0%,
+    var(--primary-dark) 100%
+  );
+  color: var(--bg-white);
+  padding: 80px 0;
+  text-align: center;
+}
+
+.hero-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-content {
+  max-width: 800px; /* Limita a largura do texto para melhor leitura */
+  animation: fadeIn 1s ease-out;
+}
+
+.hero-title {
+  font-family: "Poppins", sans-serif;
+  font-size: 3rem;
+  line-height: 1.25;
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+
+.hero-subtitle {
+  font-size: 1.2rem;
+  opacity: 0.9;
+  margin: 0 auto 40px auto; /* Centraliza o parágrafo */
+  max-width: 650px;
+}
+
+.cta-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap; /* Garante que os botões quebrem a linha em telas pequenas */
+}
+
+.cta-buttons .btn.primary {
+  padding: 15px 30px;
+  font-size: 1.1rem;
+}
+
+.btn.secondary-hero {
+  padding: 13px 28px;
+  font-size: 1.1rem;
+  background-color: transparent;
+  border: 2px solid var(--bg-white);
+  color: var(--bg-white);
+  transition: var(--transition);
+}
+
+.btn.secondary-hero:hover {
+  background-color: var(--bg-white);
+  color: var(--primary-color);
+  transform: translateY(-2px);
+}
+
+/* --- Estilos Gerais de Seção --- */
+.features,
+.topics {
+  padding: 80px 0;
+}
+.features {
+  background-color: var(--bg-light);
+}
+.topics {
+  background-color: var(--bg-white);
+}
+
+.section-title {
+  text-align: center;
+  font-size: 2.2rem;
+  font-family: "Poppins", sans-serif;
+  color: var(--text-primary);
+  margin-bottom: 50px;
+}
+
+/* --- Seção de Features --- */
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+}
+
+.feature-card {
+  background-color: var(--bg-white);
+  padding: 30px;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow-sm);
+  text-align: center;
+  transition: var(--transition);
+}
+
+.feature-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-md);
+}
+
+.feature-icon {
+  font-size: 2.5rem;
+  color: var(--primary-color);
+  margin-bottom: 20px;
+  display: inline-block;
+}
+
+.feature-card h3 {
+  font-size: 1.4rem;
+  margin-bottom: 15px;
+}
+
+.feature-card p {
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+/* --- Seção de Tópicos --- */
+.topic-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+}
+
+.topic-card {
+  display: flex;
+  flex-direction: column;
+  background: var(--bg-light);
+  padding: 30px;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition);
+  color: var(--text-primary);
+  border: 1px solid #ddd;
+}
+
+.topic-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--primary-color);
+  color: var(--primary-color);
+}
+
+.topic-icon {
+  font-size: 2rem;
+  margin-bottom: 15px;
+}
+
+.topic-card h3 {
+  font-size: 1.4rem;
+  margin-bottom: 10px;
+}
+
+.topic-card p {
+  color: var(--text-secondary);
+  flex-grow: 1;
+}
+
+/* --- Responsividade --- */
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 2.2rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1.1rem;
+  }
+
+  .cta-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .cta-buttons .btn {
+    width: 100%;
+    max-width: 300px;
+  }
+}

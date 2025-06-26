@@ -48,7 +48,32 @@
                 ><i class="fas fa-chart-line"></i> Meu Progresso</a
               >
             </li>
+            <li id="login-nav-link" style="display: none">
+              <a href="login.html"><i class="fas fa-sign-in-alt"></i> Login</a>
+            </li>
           </ul>
+
+          <div id="user-info-nav" class="user-dropdown" style="display: none">
+            <button
+              class="user-dropdown-toggle"
+              aria-haspopup="true"
+              aria-expanded="false"
+            >
+              <img
+                id="user-avatar-img"
+                src="assets/icon-3d.jpg"
+                alt="Avatar do usuário"
+                class="dropdown-avatar"
+              />
+              <span id="user-display-name"></span>
+              <i class="fas fa-chevron-down"></i>
+            </button>
+            <div class="user-dropdown-menu" role="menu">
+              <a href="#" id="logout-btn" role="menuitem">
+                <i class="fas fa-sign-out-alt"></i> Sair
+              </a>
+            </div>
+          </div>
         </nav>
       </div>
     </header>
