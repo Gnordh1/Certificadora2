@@ -84,4 +84,135 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Executa a verificação de login assim que a página carregar
   checkLoginStatus();
+
+  // Seleciona os elementos específicos da página de teoria
+  const topicosLinks = document.querySelectorAll("#topicos-lista a");
+  const topicosConteudo = document.querySelectorAll(".topico-conteudo");
+  const filtrosBtns = document.querySelectorAll(".filtro-btn");
+  const calcularCorrenteBtn = document.getElementById("calcular-corrente");
+  const searchInput = document.getElementById("search-teoria");
+  const searchButton = document.getElementById("search-button");
+
+  // Função para mostrar apenas o tópico ativo
+  function mostrarTopicoAtivo() {
+    topicosConteudo.forEach((conteudo) => {
+      conteudo.style.display = "none";
+    });
+
+    // Encontra o link ativo e mostra o tópico correspondente
+    const linkAtivo = document.querySelector("#topicos-lista a.active");
+    if (linkAtivo) {
+      const topicoId = linkAtivo.getAttribute("href").substring(1);
+      const topicoParaMostrar = document.getElementById(topicoId);
+      if (topicoParaMostrar) {
+        topicoParaMostrar.style.display = "block";
+      }
+    } else if (topicosConteudo.length > 0) {
+      // Se nenhum estiver ativo, mostra o primeiro por padrão
+      topicosConteudo[0].style.display = "block";
+    }
+  }
+
+  // --- Lógica de Navegação de Tópicos ---
+  if (topicosLinks.length > 0 && topicosConteudo.length > 0) {
+    topicosLinks.forEach((link) => {
+      link.addEventListener("click", function (e) {
+        e.preventDefault();
+
+        topicosLinks.forEach((l) => l.classList.remove("active"));
+
+        this.classList.add("active");
+
+        mostrarTopicoAtivo();
+      });
+    });
+
+    mostrarTopicoAtivo();
+  }
+
+  // --- Lógica de Filtros de Dificuldade ---
+  if (filtrosBtns.length > 0 && topicosConteudo.length > 0) {
+    filtrosBtns.forEach((btn) => {
+      btn.addEventListener("click", function () {
+        // Atualiza o botão ativo
+        filtrosBtns.forEach((b) => b.classList.remove("active"));
+        this.classList.add("active");
+
+        const nivel = this.getAttribute("data-nivel");
+
+        // Filtra os conteúdos visíveis
+        topicosConteudo.forEach((conteudo) => {
+          const nivelConteudo = conteudo.getAttribute("data-nivel");
+          const isVisivel = nivel === "todos" || nivelConteudo === nivel;
+          conteudo.style.display = isVisivel ? "block" : "none";
+        });
+
+        // Após filtrar, reativa o primeiro link e tópico visível se nenhum for
+        const primeiroTopicoVisivel = document.querySelector(
+          '.topico-conteudo[style*="display: block"]'
+        );
+        if (primeiroTopicoVisivel) {
+          topicosLinks.forEach((l) => l.classList.remove("active"));
+          const linkCorrespondente = document.querySelector(
+            `#topicos-lista a[href="#${primeiroTopicoVisivel.id}"]`
+          );
+          if (linkCorrespondente) linkCorrespondente.classList.add("active");
+        }
+      });
+    });
+  }
+
+  // --- Lógica da Calculadora da Lei de Ohm ---
+  if (calcularCorrenteBtn) {
+    calcularCorrenteBtn.addEventListener("click", function () {
+      const tensao = parseFloat(document.getElementById("tensao").value);
+      const resistencia = parseFloat(
+        document.getElementById("resistencia").value
+      );
+
+      if (!isNaN(tensao) && !isNaN(resistencia) && resistencia > 0) {
+        const corrente = tensao / resistencia;
+        document.getElementById("resultado-corrente").textContent =
+          corrente.toFixed(3);
+      } else {
+        document.getElementById("resultado-corrente").textContent = "Erro";
+        alert(
+          "Por favor, insira valores numéricos válidos. A resistência não pode ser zero."
+        );
+      }
+    });
+  }
+
+  // --- Lógica da Pesquisa de Tópicos ---
+  function buscarTopicos(termo) {
+    termo = termo.toLowerCase().trim();
+    if (!termo) return;
+
+    let encontrado = false;
+    topicosConteudo.forEach((conteudo) => {
+      const texto = conteudo.textContent.toLowerCase();
+
+      if (texto.includes(termo)) {
+        conteudo.style.display = "block";
+        encontrado = true;
+      } else {
+        conteudo.style.display = "none";
+      }
+    });
+
+    if (!encontrado) {
+      alert("Nenhum tópico encontrado com o termo: " + termo);
+    }
+  }
+
+  if (searchButton && searchInput) {
+    searchButton.addEventListener("click", () =>
+      buscarTopicos(searchInput.value)
+    );
+    searchInput.addEventListener("keypress", (e) => {
+      if (e.key === "Enter") {
+        buscarTopicos(searchInput.value);
+      }
+    });
+  }
 });
