@@ -1,23 +1,100 @@
-# Plataforma de ensino de eletrônica
 
-Projeto de uma plataforma de ensino online focado em fundamento de eletrônica e análise de circuitos, desenvolvido para a disciplina Certificadora Da Competência 2 - EC46H - 2025/1
 
-## Equipe
+# CircuitLearn - Plataforma Interativa de Ensino de Eletrônica
+
+![Java](https://img.shields.io/badge/Java-17+-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white) ![Spring](https://img.shields.io/badge/Spring_Boot-3.x-6DB33F?style=for-the-badge&logo=spring&logoColor=white) ![MySQL](https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white) ![JavaScript](https://img.shields.io/badge/JavaScript-ES6+-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black) ![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white) ![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
+
+**CircuitLearn** é uma plataforma web educacional desenvolvida como parte do curso de Engenharia de Computação da **Universidade Tecnológica Federal do Paraná (UTFPR) - Campus Cornélio Procópio**, desenvolvido para a disciplina Certificadora Da Competência 2 - EC46H - 2025/1. O projeto visa preencher a lacuna entre o aprendizado teórico e a aplicação prática da eletrônica, oferecendo um ambiente interativo para estudantes e entusiastas.
+Projeto de uma plataforma de ensino online focado em fundamento de eletrônica e análise de circuitos, 
+
+---
+
+
+## 📋 Tabela de Conteúdos
+
+1.  Sobre o Projeto
+2.  Equipe
+3.  Principais Funcionalidades
+4.  Tecnologias Utilizadas
+5.  Arquitetura da Solução
+6.  Rodando o Projeto Localmente
+7.  Endpoints da API
+8.  Estrutura do Frontend (Páginas)
+
+
+
+
+---
+
+## 🎯 Sobre o Projeto
+
+O estudo de análise de circuitos é um pilar fundamental na formação em tecnologia. No entanto, o acesso a laboratórios físicos nem sempre é suficiente para consolidar o conhecimento de forma prática. O CircuitLearn nasce com o objetivo de criar uma plataforma online completa, oferecendo um ciclo de aprendizado contínuo:
+
+-   📚 **Estudo Teórico:** Acesso a materiais de referência.
+-   🧠 **Prática com Exercícios:** Um banco de questões interativas com feedback imediato.
+-   🔬 **Validação no Simulador:** Um ambiente virtual para testar conceitos e circuitos.
+-   📊 **Acompanhamento de Progresso:** Dashboards para monitorar o desempenho.
+
+A plataforma também serve como um recurso didático para projetos de extensão da UTFPR, como o ELLP (Ensino de Lógica, Linguagens e Programação) e o grupo de robótica Overload.
+
+## 👥 Equipe
 - Bruno Garcia Baricelo
 - Gabriel Marcondes Trigolo
 - Mateus Bernardi Alves
 - Pedro Coppo Silva
 - Pedro Henrique Silva Oliveira
 
-## Descrição
-O projeto visa desenvolver uma plataforma de ensino online, interativa e acessível, focada nos fundamentos de eletrônica e análise de circuitos. A plataforma servirá como uma ferramenta de apoio ao aprendizado para estudantes de engenharia, cursos técnicos e entusiastas da área, complementando o ensino tradicional e facilitando o estudo autônomo.
+## ✨ Principais Funcionalidades
 
-### Objetivos
-- Consolidar Conhecimento: Oferecer um ambiente estruturado onde os usuários possam revisar conceitos teóricos de análise de circuitos (Lei de Ohm, Leis de Kirchhoff, Teoremas de Thévenin/Norton, análise AC/DC, etc.) e eletrônica básica (componentes como resistores, capacitores, indutores, diodos, transistores).
-- Aprendizagem Ativa: Implementar um banco de questões robusto com feedback imediato, incluindo perguntas de múltipla escolha e verdadeiro/falso, categorizadas por tópico e nível de dificuldade (Fácil, Médio, Difícil).
-- Prática Virtual: Integrar ou referenciar simuladores de circuitos online (como Falstad Circuit Simulator ou similar) com guias e desafios específicos, permitindo aos usuários visualizar o comportamento dos circuitos e validar seus cálculos teóricos.
-- Acompanhamento de Progresso: Permitir que os usuários acompanhem seu desempenho e progresso nos diferentes tópicos e níveis de dificuldade.
-- Apoio a Projetos de Extensão: Servir como recurso didático para projetos de extensão que envolvam o ensino de eletrônica básica para comunidades específicas (ex: estudantes de escolas públicas, programas de inclusão digital, etc.), fornecendo material de estudo complementar e exercícios práticos.
+-   🧑‍🏫 **Autenticação Completa:** Sistema de registro, login e logout com gerenciamento de sessão, personalizando a experiência do usuário.
+-   🧠 **Módulo de Exercícios Interativos:**
+    -   Cards de exercícios carregados dinamicamente via API.
+    -   Filtros por tópico (Lei de Ohm, Kirchhoff, etc.) e nível de dificuldade (Fácil, Médio, Difícil).
+    -   Lista de exercícios personalizada que omite questões já resolvidas corretamente.
+    -   Feedback visual e textual instantâneo após a submissão de uma resposta.
+-   📈 **Dashboard de Progresso:**
+    -   Resumo geral com estatísticas de conclusão, taxa de acerto e tópicos iniciados.
+    -   Análise detalhada do desempenho em cada tópico, com barras de progresso.
+    -   Recomendações de estudo geradas com base nos pontos de menor desempenho.
+-   🔬 **Ambiente de Teoria e Simulação:**
+    -   Página de teoria estruturada para receber conteúdo educacional detalhado.
+    -   Simulador de circuitos **Falstad** integrado via `<iframe>`, com desafios guiados para prática livre.
+
+
+## 🛠️ Tecnologias Utilizadas
+
+#### **Backend**
+
+-   **Linguagem:** Java 17+
+-   **Framework:** Spring Boot 3.x
+    -   **Spring MVC:** Para a construção da API RESTful.
+    -   **Spring Data JPA:** Para a camada de persistência de dados.
+    -   **Spring Web:** Para funcionalidades web essenciais.
+-   **Persistência:** Hibernate (via Spring Data JPA)
+-   **Autenticação:** Gerenciamento de sessão via `HttpSession` (protótipo).
+
+#### **Frontend**
+
+-   **Linguagem:** HTML5, CSS3 (com variáveis CSS para design system).
+-   **Scripting:** JavaScript (ES6+) para manipulação do DOM, interatividade e chamadas assíncronas (Fetch API).
+
+#### **Banco de Dados e Ferramentas**
+
+-   **Banco de Dados:** MySQL (Relacional)
+-   **Controle de Versão:** Git e GitHub
+-   **IDEs:** IntelliJ IDEA, Visual Studio Code
+-   **Comunicação:** Discord, WhatsApp
+
+## 🏛️  Arquitetura da Solução
+
+A aplicação foi projetada seguindo uma arquitetura multicamadas para garantir separação de responsabilidades, escalabilidade e manutenibilidade.
+
+-   **Camada de Apresentação (Frontend):** Implementada com HTML, CSS e JavaScript, é responsável por toda a interação com o usuário. Consome a API do backend para renderizar páginas de forma dinâmica.
+-   **Camada de Aplicação (Backend API):** Desenvolvida com Spring Boot, contém a lógica de negócio, endpoints RESTful, e orquestra as operações. Segue o padrão **Controller-Service-Repository**.
+-   **Camada de Persistência (Banco de Dados):** Utiliza MySQL para armazenar de forma persistente os dados de usuários, exercícios e histórico de progresso. O schema é gerenciado pelo Hibernate com base nas entidades JPA.
+
+---
+
 
 
 ## 🚀 Rodando o Projeto Localmente
@@ -97,3 +174,102 @@ Após a inicialização, a aplicação estará disponível no seu navegador em:
 **[http://localhost:8080/](http://localhost:8080/)**
 
 Você será redirecionado para a página de login para começar a usar o CircuitLearn.
+
+
+## 📡 Endpoints da API
+
+Abaixo estão os principais endpoints da API RESTful.
+
+| Método | Endpoint                             | Descrição                                         |
+| :----- | :----------------------------------- | :-------------------------------------------------- |
+| `POST` | `/api/auth/register`                 | Registra um novo usuário.                           |
+| `POST` | `/api/auth/login`                    | Autentica um usuário e cria uma sessão.             |
+| `POST` | `/api/auth/logout`                   | Invalida a sessão do usuário.                       |
+| `GET`  | `/api/auth/user`                     | Retorna os dados do usuário logado na sessão.       |
+| `GET`  | `/api/exercicios`                    | Lista exercícios com filtros e paginação.           |
+| `GET`  | `/api/exercicios/{id}`               | Busca um exercício específico por ID.               |
+| `POST` | `/api/exercicios/{id}/verificar`     | Verifica a resposta de um exercício.                |
+| `GET`  | `/api/progresso`                     | Retorna o dashboard de progresso do usuário logado. |
+
+## 📄 Estrutura do Frontend (Páginas)
+
+O frontend da aplicação foi construído com HTML, CSS e JavaScript puro, focando em uma experiência de usuário clara e interativa. Cada página tem um propósito específico dentro do ecossistema de aprendizado.
+
+#### login.html & cadastro.html
+
+-   **Propósito:** Gestão de acesso dos usuários.
+    
+-   **Funcionalidades:**
+    
+    -   **Login:** Formulário para que usuários existentes acessem a plataforma com suas credenciais (email e senha). Fornece feedback em caso de erro.
+        
+    -   **Cadastro:** Permite que novos usuários criem uma conta. O formulário inclui validações em tempo real para nome, formato de email e complexidade/confirmação da senha, garantindo uma experiência de registro fluida e segura.
+        
+
+#### inicio.html
+
+-   **Propósito:** Página de boas-vindas e hub central.
+    
+-   **Funcionalidades:**
+    
+    -   Serve como a página inicial após o login.
+        
+    -   Apresenta uma visão geral da plataforma, destacando suas principais seções: Teoria, Exercícios, Simulador e Progresso.
+        
+    -   Oferece atalhos rápidos para os principais tópicos de estudo, incentivando o engajamento imediato.
+        
+
+#### exercicios.html
+
+-   **Propósito:** Núcleo de aprendizado prático da plataforma.
+    
+-   **Funcionalidades:**
+    
+    -   **Listagem Dinâmica:** Exibe exercícios em formato de "cards" interativos, carregados dinamicamente da API /api/exercicios.
+        
+    -   **Filtragem Avançada:** Permite ao usuário filtrar os exercícios por **Tópico** (Lei de Ohm, Leis de Kirchhoff, etc.) e **Nível** (Fácil, Médio, Difícil).
+        
+    -   **Personalização:** A lista de exercícios exclui automaticamente as questões que o usuário já respondeu corretamente, focando o estudo em novos desafios.
+        
+    -   **Interatividade:** O usuário seleciona uma alternativa e clica em "Verificar" para submeter sua resposta.
+        
+    -   **Feedback Imediato:** Após a verificação, a interface exibe se a resposta foi correta ou incorreta, juntamente com um texto de feedback e, opcionalmente, a resposta correta. As opções são desabilitadas para evitar novas tentativas.
+        
+    -   **Paginação:** Controles para navegar entre as diferentes páginas de exercícios.
+        
+
+#### progresso.html
+
+-   **Propósito:** Dashboard pessoal para monitoramento de desempenho.
+    
+-   **Funcionalidades:**
+    
+    -   **Resumo Geral:** Exibe estatísticas consolidadas, como a quantidade de exercícios concluídos sobre o total, a taxa de acerto global e o número de tópicos iniciados.
+        
+    -   **Desempenho por Tópico:** Apresenta uma análise detalhada para cada categoria de exercício, com barras visuais que indicam o percentual de progresso.
+        
+    -   **Recomendações Inteligentes:** Gera sugestões de estudo com base nos tópicos de menor desempenho, oferecendo links diretos para a seção de teoria correspondente.
+        
+
+#### teoria.html
+
+-   **Propósito:** Biblioteca de conhecimento teórico.
+    
+-   **Funcionalidades:**
+    
+    -   Organiza o conteúdo educacional em tópicos de fácil navegação (Lei de Ohm, Componentes, etc.).
+        
+    -   Cada artigo é estruturado com explicações, fórmulas, exemplos práticos e, em alguns casos, demonstrações interativas simples.
+        
+    -   Serve como material de referência para consulta antes ou depois de resolver os exercícios.
+        
+
+#### simulador.html
+
+-   **Propósito:** Ambiente de prática livre e experimentação.
+    
+-   **Funcionalidades:**
+    
+    -   **Integração:** Embuti o simulador de circuitos **Falstad** através de um <iframe\>, proporcionando uma ferramenta poderosa diretamente na plataforma.
+        
+    -   **Desafios Guiados:** Apresenta uma lista de desafios práticos (ex: "Acenda o LED", "Monte um Divisor de Tensão") que incentivam o usuário a aplicar os conceitos teóricos no simulador.
